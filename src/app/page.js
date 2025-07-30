@@ -7,13 +7,13 @@ import AudioPlayer from "./components/AudioPlayer";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChurch, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays, faClock } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="bg-white text-[#a96a7d] min-h-screen font-sans">
-      <AudioPlayer/>
       <Header />
 
       {/* HERO */}
@@ -55,22 +55,26 @@ export default function Home() {
       </section>
 
       {/* CEREMONIA */}
-      <section id="ceremonia" className="bg-white text-[#a96a7d] py-14 px-6 text-center space-y-6">
-        <div className="w-20 h-20 mx-auto animate-fade-in-slow">
-          <FontAwesomeIcon icon={faChurch} className="text-[#a96a7d] text-4xl animate-pulse" />
+      <section id="ceremonia" className="bg-white text-[#a96a7d] py-14 px-6 text-center space-y-1">
+        <div className="w-14 h-14 mx-auto animate-fade-in-slow">
+          <FontAwesomeIcon icon={faChurch} className="text-[#a96a7d] text-3xl animate-pulse" />
         </div>
         <h2 className="text-4xl font-bold tracking-wide uppercase">Ceremonia</h2>
-        <p className="text-xl font-semibold">Iglesia XXXXX</p>
+        <p className="text-xl font-semibold">Parroquia "Virgen de Fatima"</p>
+        <p className="">Calle Real y Jr. 2 de Mayo - El Tambo</p>
         <hr className="border-t border-[#a96a7d]/40 w-24 mx-auto my-2" />
-        <div className="flex items-center justify-center gap-4 text-md mt-4">
-          <div className="flex items-center gap-1">
-            <span>📅</span><span className="font-medium tracking-wide uppercase">06 Set</span>
+        <div className="flex items-center justify-center gap-[6px] text-md mt-4 leading-tight">
+          <div className="flex items-center gap-[2px]">
+            <FontAwesomeIcon icon={faCalendarDays} className="text-[#a96a7d] text-base" />
+            <span className="font-medium tracking-wide uppercase">06 Set</span>
           </div>
           <span className="w-px h-5 bg-[#a96a7d]/50"></span>
-          <div className="flex items-center gap-1">
-            <span>🕔</span><span className="font-medium">10:00 AM</span>
+          <div className="flex items-center gap-[2px]">
+            <FontAwesomeIcon icon={faClock} className="text-[#a96a7d] text-base" />
+            <span className="font-medium">10:00 AM</span>
           </div>
         </div>
+
         <div className="mt-6">
           <a href="https://www.google.com/maps?q=Iglesia+San+José" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#a96a7d] text-white font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-[#944a5f] transition-all duration-300">
             Ver ubicación
@@ -78,29 +82,43 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* CELEBRACIÓN */}
-      <section id="celebracion" className="bg-[#a96a7d] text-white py-14 px-6 text-center space-y-6">
-        <div className="w-20 h-20 mx-auto animate-fade-in-slow">
-          <FontAwesomeIcon icon={faChampagneGlasses} className="text-white text-4xl animate-pulse" />
+      <section id="celebracion" className="bg-[#a96a7d] text-white py-14 px-6 text-center space-y-1">
+        <div className="w-14 h-14 mx-auto animate-fade-in-slow">
+          <FontAwesomeIcon icon={faChampagneGlasses} className="text-white text-3xl animate-pulse" />
         </div>
         <h2 className="text-4xl font-bold tracking-wide uppercase">Celebración</h2>
-        <p className="text-xl font-semibold">Villa Ariana</p>
+        <p className="text-xl font-semibold">La Villa de Ariana</p>
+        <p className="">Prolg. Trujillo N° 1619 - Incho - El Tambo</p>
         <hr className="border-t border-white/40 w-24 mx-auto my-2" />
-        <div className="flex items-center justify-center gap-4 text-md mt-4">
-          <div className="flex items-center gap-1">
-            <span>📅</span><span className="font-medium tracking-wide uppercase">06 Set</span>
+
+        <div className="flex items-center justify-center gap-[6px] text-md mt-4 leading-tight">
+          <div className="flex items-center gap-[6px]">
+            <FontAwesomeIcon icon={faCalendarDays} className="text-white text-base" />
+            <span className="font-medium tracking-wide uppercase">06 Set</span>
           </div>
           <span className="w-px h-5 bg-white/50"></span>
-          <div className="flex items-center gap-1">
-            <span>🕠</span><span className="font-medium">5:00 PM</span>
+          <div className="flex items-center gap-[6px]">
+            <FontAwesomeIcon icon={faClock} className="text-white text-base" />
+            <span className="font-medium">5:00 PM</span>
           </div>
         </div>
+
         <div className="mt-6">
-          <a href="https://www.google.com/maps?q=Jardines+del+Valle" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#a96a7d] font-semibold py-2 px-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300">
+          <a
+            href="https://www.google.com/maps?q=Jardines+del+Valle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-[#a96a7d] font-semibold py-2 px-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300"
+          >
             Ver ubicación
           </a>
         </div>
       </section>
+
+
 
       {/* GALERÍA DE FOTOS */}
       <section className="bg-white text-[#a96a7d] pt-6 pb-10 px-4 sm:px-6 md:px-12">
@@ -168,6 +186,9 @@ export default function Home() {
         </form>
         <p className="mt-8 text-xl font-script">Los esperamos con mucho cariño,<br /><span className="text-2xl font-bold">Richard & Elva</span></p>
       </section>
+
+
+      <AudioPlayer />
     </div>
   );
 }
