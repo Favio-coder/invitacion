@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import { useState } from "react";
 import { Heart, CalendarDays, Glasses, Shirt, Gift } from "lucide-react";
 import Countdown from "./components/Countdown";
+import AudioPlayer from "./components/AudioPlayer";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChurch, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,6 +13,7 @@ export default function Home() {
 
   return (
     <div className="bg-white text-[#a96a7d] min-h-screen font-sans">
+      <AudioPlayer/>
       <Header />
 
       {/* HERO */}
@@ -61,7 +64,7 @@ export default function Home() {
         <hr className="border-t border-[#a96a7d]/40 w-24 mx-auto my-2" />
         <div className="flex items-center justify-center gap-4 text-md mt-4">
           <div className="flex items-center gap-1">
-            <span>📅</span><span className="font-medium tracking-wide uppercase">05 Set</span>
+            <span>📅</span><span className="font-medium tracking-wide uppercase">06 Set</span>
           </div>
           <span className="w-px h-5 bg-[#a96a7d]/50"></span>
           <div className="flex items-center gap-1">
@@ -85,7 +88,7 @@ export default function Home() {
         <hr className="border-t border-white/40 w-24 mx-auto my-2" />
         <div className="flex items-center justify-center gap-4 text-md mt-4">
           <div className="flex items-center gap-1">
-            <span>📅</span><span className="font-medium tracking-wide uppercase">05 Set</span>
+            <span>📅</span><span className="font-medium tracking-wide uppercase">06 Set</span>
           </div>
           <span className="w-px h-5 bg-white/50"></span>
           <div className="flex items-center gap-1">
