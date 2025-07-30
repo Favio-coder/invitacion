@@ -39,7 +39,7 @@ export default function Home() {
         <p className="text-lg md:text-xl font-light">
           Nos encantaría que seas parte de este momento tan especial para nosotros ¡Falta poco!
         </p>
-        <Countdown targetDate="2025-09-04T17:00:00" />
+        <Countdown targetDate="2025-09-06T17:00:00" />
         <div className="mt-8">
           <button
             className="inline-flex items-center gap-2 bg-white text-[#a96a7d] font-semibold py-2 px-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300"
