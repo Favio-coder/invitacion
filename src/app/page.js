@@ -44,15 +44,18 @@ export default function Home() {
         </p>
         <Countdown targetDate="2025-09-06T17:00:00" />
         <div className="mt-8">
-          <button
+          <a
+            href="https://www.google.com/calendar/render?action=TEMPLATE&text=Boda De Richard y Elva&dates=20250906T150000Z/20250906T160000Z&location=https://g.co/kgs/a6sPTNq"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-[#a96a7d] font-semibold py-2 px-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300"
-            onClick={() => alert('Luego lo vinculamos con Google Calendar 💡')}
           >
             <CalendarDays size={20} />
             Agendar recordatorio
-          </button>
+          </a>
         </div>
       </section>
+
 
       {/* CEREMONIA */}
       <section id="ceremonia" className="bg-white text-[#a96a7d] py-14 px-6 text-center space-y-1">
@@ -76,7 +79,7 @@ export default function Home() {
         </div>
 
         <div className="mt-6">
-          <a href="https://www.google.com/maps?q=Iglesia+San+José" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#a96a7d] text-white font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-[#944a5f] transition-all duration-300">
+          <a href="https://maps.app.goo.gl/LUVeVva767hTFLfa6" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#a96a7d] text-white font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-[#944a5f] transition-all duration-300">
             Ver ubicación
           </a>
         </div>
@@ -108,7 +111,7 @@ export default function Home() {
 
         <div className="mt-6">
           <a
-            href="https://www.google.com/maps?q=Jardines+del+Valle"
+            href="https://maps.app.goo.gl/ssQipFpJU27kBitQ9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-[#a96a7d] font-semibold py-2 px-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300"
@@ -174,18 +177,84 @@ export default function Home() {
       )}
 
       {/* FORMULARIO DE CONFIRMACIÓN */}
-      <section id='asistencia' className="bg-white text-[#a96a7d] py-12 px-6 text-center space-y-6">
+      {/* FORMULARIO DE CONFIRMACIÓN */}
+      <section id="asistencia" className="bg-white text-[#a96a7d] py-12 px-6 text-center space-y-6">
         <h2 className="text-2xl font-bold uppercase">Confirma tu asistencia</h2>
         <form className="max-w-lg mx-auto space-y-4">
-          <input type="text" placeholder="Nombre completo" className="w-full px-4 py-2 border border-[#a96a7d]/30 rounded-md focus:outline-none" />
-          <input type="text" placeholder="Número de contacto" className="w-full px-4 py-2 border border-[#a96a7d]/30 rounded-md focus:outline-none" />
-          <textarea rows={4} placeholder="Mensaje (opcional)" className="w-full px-4 py-2 border border-[#a96a7d]/30 rounded-md focus:outline-none" />
-          <button type="button" className="bg-[#a96a7d] text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-[#944a5f] transition-all duration-300">
-            Enviar
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre completo"
+            required
+            className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+          />
+          <input
+            type="text"
+            name="numero"
+            placeholder="Número de contacto"
+            required
+            className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+          />
+          <label className="flex items-center gap-2 text-sm">
+            <input type="checkbox" id="pareja" className="accent-[#a96a7d]" />
+            Vendré con pareja
+          </label>
+          <label className="flex items-center gap-2 text-sm">
+            <input
+              type="checkbox"
+              id="ninos"
+              className="accent-[#a96a7d]"
+              onChange={(e) => {
+                const cantidadInput = document.getElementById("cantidadNinos");
+                if (cantidadInput) {
+                  cantidadInput.style.display = e.target.checked ? "block" : "none";
+                }
+              }}
+            />
+            Llevaré niños (opcional)
+          </label>
+          <input
+            type="number"
+            min={1}
+            placeholder="¿Cuántos niños llevarás?"
+            id="cantidadNinos"
+            className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+            style={{ display: "none" }}
+          />
+          <textarea
+            rows={3}
+            name="mensaje"
+            placeholder="Mensaje (opcional)"
+            className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+          />
+          <button
+            type="button"
+            className="bg-[#a96a7d] text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-[#944a5f] transition-all duration-300"
+            onClick={() => {
+              const nombre = document.querySelector('input[name="nombre"]')?.value || "";
+              const numero = document.querySelector('input[name="numero"]')?.value || "";
+              const mensaje = document.querySelector('textarea[name="mensaje"]')?.value || "";
+              const conPareja = document.getElementById("pareja")?.checked;
+              const llevaNinos = document.getElementById("ninos")?.checked;
+              const cantidadNinos = document.getElementById("cantidadNinos")?.value;
+
+              let texto = `Hola, soy *${nombre}*. Confirmo mi asistencia a la boda 🎉.`;
+              if (conPareja) texto += ` Vendré con mi pareja 💕.`;
+              if (llevaNinos && cantidadNinos) texto += ` Llevaré a ${cantidadNinos} niño(s) 👶.`;
+              if (mensaje) texto += ` Mensaje: ${mensaje}`;
+              texto += `\nMi número de contacto: ${numero}`;
+
+              const url = `https://wa.me/51946681411?text=${encodeURIComponent(texto)}`;
+              window.open(url, '_blank');
+            }}
+          >
+            Confirmar por WhatsApp
           </button>
         </form>
+
         <p className="mt-8 text-xl font-script">Los esperamos con mucho cariño,<br /><span className="text-2xl font-bold">Richard & Elva</span></p>
       </section>
+
 
 
       <AudioPlayer />
