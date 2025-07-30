@@ -39,7 +39,7 @@ export default function Home() {
       {/* INVITACIÓN + CONTADOR */}
       <section id="fecha" className="py-16 bg-[#a96a7d] text-white text-center space-y-6">
         <h2 className="text-3xl md:text-4xl font-serif animate-pulse">¡Estás invitado!</h2>
-        <p className="text-lg md:text-xl font-light">
+        <p className="text-lg md:text-xl font-light px-4 md:px-0">
           Nos encantaría que seas parte de este momento tan especial para nosotros ¡Falta poco!
         </p>
         <Countdown targetDate="2025-09-06T17:00:00" />
