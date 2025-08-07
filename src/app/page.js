@@ -8,6 +8,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChurch, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays, faClock } from "@fortawesome/free-solid-svg-icons";
+import { faUserTie, faFemale } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -19,17 +20,20 @@ export default function Home() {
       {/* HERO */}
       <section id="inicio" className="relative w-full h-[30vh] md:h-[85vh] overflow-hidden">
         <img
-          src="https://media.istockphoto.com/id/1186306039/es/foto/este-d%C3%ADa-es-el-primero-de-muchos-d%C3%ADas-hermosos-juntos.jpg?s=612x612&w=0&k=20&c=xxVvY3EBLkFqdeK-QVssinjuBpbG0tvlXr7n2MruQh8="
+          src="fotos/foto7.jpg"
           alt="Pareja romántica"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
-          <h2 className="text-white text-4xl md:text-6xl font-script drop-shadow-lg mb-2">
-            Richard & Elva
-          </h2>
-          <p className="text-white text-lg md:text-2xl italic font-light">
-            ¡Nos casamos!
-          </p>
+          <div className="mt-18 md:mt-0 text-center">
+            <h2 className="text-white text-4xl md:text-6xl font-script drop-shadow-lg mb-2">
+              Richard & Elva
+            </h2>
+            <p className="text-white text-lg md:text-2xl italic font-light">
+              ¡Nos casamos!
+            </p>
+          </div>
+
           <div className="mt-4 animate-bounce text-white">
             <Heart size={48} />
           </div>
@@ -59,7 +63,7 @@ export default function Home() {
 
       {/* CEREMONIA */}
       <section id="ceremonia" className="bg-white text-[#a96a7d] py-14 px-6 text-center space-y-1">
-        <div className="w-14 h-14 mx-auto animate-fade-in-slow">
+        <div className="w-14 h-14 mx-auto animate-fadx|e-in-slow">
           <FontAwesomeIcon icon={faChurch} className="text-[#a96a7d] text-3xl animate-pulse" />
         </div>
         <h2 className="text-4xl font-bold tracking-wide uppercase">Ceremonia</h2>
@@ -126,14 +130,14 @@ export default function Home() {
       {/* GALERÍA DE FOTOS */}
       <section className="bg-white text-[#a96a7d] pt-6 pb-10 px-4 sm:px-6 md:px-12">
         <div className="hidden md:grid grid-cols-3 gap-6">
-          {["https://i.pinimg.com/736x/4e/6c/5b/4e6c5b517f9ca3a2037bec464acfce1d.jpg", "https://i.pinimg.com/originals/d9/c1/9f/d9c19fc8b37260cc75cb82e4e706e0b1.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4NJ9buupn7ZeKb9xidFXnxDM4FHJnzsAD3A&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDD3-VTr8lfMnJAJy95JDZLG-MJMMpk3uM3A&s", "https://i.pinimg.com/736x/4e/6c/5b/4e6c5b517f9ca3a2037bec464acfce1d.jpg", "https://i.pinimg.com/originals/d9/c1/9f/d9c19fc8b37260cc75cb82e4e706e0b1.jpg"].map((src, index) => (
+          {["fotos/foto1.jpg", "fotos/foto2.jpg", "fotos/foto3.jpg", "fotos/foto4.jpg", "fotos/foto8.jpg", "fotos/foto6.jpg"].map((src, index) => (
             <div key={index} className="opacity-0 animate-fade-left" style={{ animationDelay: `${index * 150}ms`, animationFillMode: "forwards" }}>
               <img src={src} alt={`Galería ${index + 1}`} className="w-full h-64 object-cover rounded-xl shadow-md" />
             </div>
           ))}
         </div>
         <div className="md:hidden grid grid-cols-2 gap-4 mt-4">
-          {["https://i.pinimg.com/736x/4e/6c/5b/4e6c5b517f9ca3a2037bec464acfce1d.jpg", "https://i.pinimg.com/originals/d9/c1/9f/d9c19fc8b37260cc75cb82e4e706e0b1.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4NJ9buupn7ZeKb9xidFXnxDM4FHJnzsAD3A&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDD3-VTr8lfMnJAJy95JDZLG-MJMMpk3uM3A&s"].map((src, index) => (
+          {["fotos/foto1.jpg", "fotos/foto2.jpg", "fotos/foto3.jpg", "fotos/foto8.jpg"].map((src, index) => (
             <div key={index} className="opacity-0 animate-fade-left" style={{ animationDelay: `${index * 150}ms`, animationFillMode: "forwards" }}>
               <img src={src} alt={`Galería Mobile ${index + 1}`} className="w-full h-52 object-cover rounded-xl shadow-md" />
             </div>
@@ -176,7 +180,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* FORMULARIO DE CONFIRMACIÓN */}
       {/* FORMULARIO DE CONFIRMACIÓN */}
       <section id="asistencia" className="bg-white text-[#a96a7d] py-12 px-6 text-center space-y-6">
         <h2 className="text-2xl font-bold uppercase">Confirma tu asistencia</h2>
@@ -251,6 +254,27 @@ export default function Home() {
             Confirmar por WhatsApp
           </button>
         </form>
+
+        {/* <p className="mt-8 text-xl font-script">Los esperamos con mucho cariño,<br /><span className="text-2xl font-bold">Richard & Elva</span></p> */}
+      </section>
+
+
+      <section id="vestimenta" className="bg-[#fef6f8] text-[#a96a7d] py-12 px-6 text-center space-y-6">
+        <h2 className="text-2xl font-bold uppercase">Código de vestimenta</h2>
+        <div className="flex justify-center items-center gap-10 flex-wrap">
+          <div className="flex flex-col items-center">
+            <FontAwesomeIcon icon={faUserTie} className="text-5xl text-[#a96a7d]" />
+            <p className="mt-2 text-lg font-semibold">Hombres: Terno formal</p>
+          </div>
+          <div className="flex flex-col items-center">
+           <FontAwesomeIcon icon={faFemale} className="text-5xl text-[#a96a7d]" />
+            <p className="mt-2 text-lg font-semibold">Mujeres: Vestido elegante</p>
+          </div>
+        </div>
+        <p className="text-md mt-6 max-w-2xl mx-auto">
+          El código de vestimenta es <strong>formal elegante</strong>. Ayúdanos a mantener la estética del evento luciendo tus mejores prendas. ¡Gracias por ser parte de este día tan especial!
+        </p>
+
 
         <p className="mt-8 text-xl font-script">Los esperamos con mucho cariño,<br /><span className="text-2xl font-bold">Richard & Elva</span></p>
       </section>
