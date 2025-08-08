@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChurch, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays, faClock } from "@fortawesome/free-solid-svg-icons";
 import { faUserTie, faFemale } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -170,10 +171,13 @@ export default function Home() {
               className="absolute top-2 right-2 text-[#a96a7d] font-bold text-xl hover:opacity-60"
               onClick={() => setShowModal(false)}
             >×</button>
-            <h3 className="text-xl font-semibold mb-4 text-center">Lluvia de sobres</h3>
+            <h3 className="text-xl font-semibold mb-4 text-center">
+              <FontAwesomeIcon icon={faEnvelope} className="text-[#a96a7d]" />
+              Lluvia de sobres
+            </h3>
             <div className="space-y-2">
-              <p><span className="font-bold">Yape:</span> 95222080 - Elva Medina Gaspar</p>
-              <p><span className="font-bold">Yape:</span> 943270595 - Richard Medina Gaspar</p>
+              <p><span className="font-bold">Yape:</span> 95222080</p>
+              <p><span className="font-bold">Yape:</span> 943270595</p>
             </div>
           </div>
         </div>
