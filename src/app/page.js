@@ -158,7 +158,7 @@ export default function Home() {
           className="bg-[#a96a7d] text-white font-semibold mt-6 py-2 px-6 rounded-full shadow-lg hover:bg-[#944a5f] transition-all duration-300"
           onClick={() => setShowModal(true)}
         >
-          Ver opciones de regalo
+          Lluvia de sobres
         </button>
       </section>
 
@@ -170,11 +170,10 @@ export default function Home() {
               className="absolute top-2 right-2 text-[#a96a7d] font-bold text-xl hover:opacity-60"
               onClick={() => setShowModal(false)}
             >×</button>
-            <h3 className="text-xl font-semibold mb-4 text-center">Opciones de regalo</h3>
+            <h3 className="text-xl font-semibold mb-4 text-center">Lluvia de sobres</h3>
             <div className="space-y-2">
-              <p><span className="font-bold">Cuenta BCP:</span> 191-23456789-0-12</p>
-              <p><span className="font-bold">Cuenta Interbank:</span> 002-3456789012</p>
-              <p><span className="font-bold">Yape:</span> 95222080</p>
+              <p><span className="font-bold">Yape:</span> 95222080 - Elva Medina Gaspar</p>
+              <p><span className="font-bold">Yape:</span> 943270595 - Richard Medina Gaspar</p>
             </div>
           </div>
         </div>
@@ -264,16 +263,13 @@ export default function Home() {
         <div className="flex justify-center items-center gap-10 flex-wrap">
           <div className="flex flex-col items-center">
             <FontAwesomeIcon icon={faUserTie} className="text-5xl text-[#a96a7d]" />
-            <p className="mt-2 text-lg font-semibold">Hombres: Terno formal</p>
+            <p className="mt-2 text-lg font-semibold">Hombres</p>
           </div>
           <div className="flex flex-col items-center">
            <FontAwesomeIcon icon={faFemale} className="text-5xl text-[#a96a7d]" />
-            <p className="mt-2 text-lg font-semibold">Mujeres: Vestido elegante</p>
+            <p className="mt-2 text-lg font-semibold">Mujeres</p>
           </div>
         </div>
-        <p className="text-md mt-6 max-w-2xl mx-auto">
-          El código de vestimenta es <strong>formal elegante</strong>. Ayúdanos a mantener la estética del evento luciendo tus mejores prendas. ¡Gracias por ser parte de este día tan especial!
-        </p>
 
 
         <p className="mt-8 text-xl font-script">Los esperamos con mucho cariño,<br /><span className="text-2xl font-bold">Richard & Elva</span></p>
