@@ -176,7 +176,7 @@ export default function Home() {
               Lluvia de sobres
             </h3>
             <div className="space-y-2">
-              <p><span className="font-bold">Yape:</span> 95222080</p>
+              <p><span className="font-bold">Yape:</span> 952222080</p>
               <p><span className="font-bold">Yape:</span> 943270595</p>
             </div>
           </div>
