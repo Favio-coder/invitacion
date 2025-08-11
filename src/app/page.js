@@ -110,7 +110,7 @@ export default function Home() {
           <span className="w-px h-5 bg-white/50"></span>
           <div className="flex items-center gap-[6px]">
             <FontAwesomeIcon icon={faClock} className="text-white text-base" />
-            <span className="font-medium">5:00 PM</span>
+            <span className="font-medium">1:00 PM</span>
           </div>
         </div>
 
