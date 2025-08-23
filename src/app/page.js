@@ -184,7 +184,7 @@ export default function Home() {
       )}
 
       {/* FORMULARIO DE CONFIRMACIÓN */}
-      <section id="asistencia" className="bg-white text-[#a96a7d] py-12 px-6 text-center space-y-6">
+      {/* <section id="asistencia" className="bg-white text-[#a96a7d] py-12 px-6 text-center space-y-6">
         <h2 className="text-2xl font-bold uppercase">Confirma tu asistencia</h2>
         <form className="max-w-lg mx-auto space-y-4">
           <input
@@ -257,9 +257,7 @@ export default function Home() {
             Confirmar por WhatsApp
           </button>
         </form>
-
-        {/* <p className="mt-8 text-xl font-script">Los esperamos con mucho cariño,<br /><span className="text-2xl font-bold">Richard & Elva</span></p> */}
-      </section>
+      </section> */}
 
 
       <section id="vestimenta" className="bg-[#fef6f8] text-[#a96a7d] py-12 px-6 text-center space-y-6">
